@@ -57,7 +57,26 @@
         <Parameter name="low coordinate" type="Array(double)" value="{75, 0.0}"/>
         <Parameter name="high coordinate" type="Array(double)" value="{95, 1.0}"/>
       </ParameterList>
-    </ParameterList>    
+    </ParameterList>
+
+    <ParameterList name="shallow">
+      <ParameterList name="region: labeled set">
+        <Parameter name="entity" type="string" value="cell"/>
+        <Parameter name="file" type="string" value="../../data/hillslope_lake.exo"/>
+        <Parameter name="format" type="string" value="Exodus II"/>
+        <Parameter name="label" type="string" value="101"/>
+      </ParameterList>
+    </ParameterList>
+    <ParameterList name="deep">
+      <ParameterList name="region: labeled set">
+        <Parameter name="entity" type="string" value="cell"/>
+        <Parameter name="file" type="string" value="../../data/hillslope_lake.exo"/>
+        <Parameter name="format" type="string" value="Exodus II"/>
+        <Parameter name="label" type="string" value="102"/>
+      </ParameterList>
+     </ParameterList>
+
+    
   </ParameterList>
 
   <ParameterList name="cycle driver">
@@ -578,7 +597,7 @@
         <Parameter name="constant in time" type="bool" value="true"/>
         <ParameterList name="function" type="ParameterList">
           <ParameterList name="rest domain" type="ParameterList">
-            <Parameter name="region" type="string" value="computational domain"/>
+            <Parameter name="region" type="string" value="shallow"/>
             <Parameter name="component" type="string" value="cell"/>
             <ParameterList name="function" type="ParameterList">
               <ParameterList name="function-constant" type="ParameterList">
@@ -586,6 +605,16 @@
               </ParameterList>
             </ParameterList>
           </ParameterList>
+	  <ParameterList name="rest domain 2" type="ParameterList">
+            <Parameter name="region" type="string" value="deep"/>
+            <Parameter name="component" type="string" value="cell"/>
+            <ParameterList name="function" type="ParameterList">
+              <ParameterList name="function-constant" type="ParameterList">
+                <Parameter name="value" type="double" value="0.5"/>
+              </ParameterList>
+            </ParameterList>
+          </ParameterList>
+	</ParameterList>
         </ParameterList>
         <ParameterList name="verbose object" type="ParameterList">
           <Parameter name="verbosity level" type="string" value="low"/>
