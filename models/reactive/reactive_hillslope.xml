@@ -11,7 +11,8 @@
     <ParameterList name="domain" type="ParameterList">
       <Parameter name="mesh type" type="string" value="read mesh file"/>
       <ParameterList name="read mesh file parameters" type="ParameterList">
-        <Parameter name="file" type="string" value="../../data/hillslope_higres.exo"/>
+<!--    <Parameter name="file" type="string" value="../../data/hillslope_higres.exo"/> -->
+        <Parameter name="file" type="string" value="../../data/hillslope_lake.exo"/>
         <Parameter name="format" type="string" value="Exodus II"/>
       </ParameterList>
     </ParameterList>
@@ -45,7 +46,8 @@
     <ParameterList name="surface" type="ParameterList">
       <ParameterList name="region: labeled set" type="ParameterList">
         <Parameter name="label" type="string" value="2"/>
-        <Parameter name="file" type="string" value="../../data/hillslope_higres.exo"/>
+<!--    <Parameter name="file" type="string" value="../../data/hillslope_higres.exo"/>-->
+        <Parameter name="file" type="string" value="../../data/hillslope_lake.exo"/>	
         <Parameter name="format" type="string" value="Exodus II"/>
         <Parameter name="entity" type="string" value="face"/>
       </ParameterList>
@@ -308,7 +310,7 @@
             <Parameter name="regions" type="Array(string)" value="{injection}"/>
             <Parameter name="solutes" type="Array(string)" value="{tracer1,tracer2}"/>
             <Parameter name="times" type="Array(double)" value="{0.0, 14400.0, 18000.0}"/>
-            <Parameter name="geochemical conditions" type="Array(string)" value="{irrigation, irrigation, initial}"/>
+            <Parameter name="geochemical conditions" type="Array(string)" value="{initial, irrigation, initial}"/>
             <Parameter name="time functions" type="Array(string)" value="{constant, constant}"/>
             <Parameter name="ats units [moles/m^3]" type="bool" value="true"/>
           </ParameterList>
